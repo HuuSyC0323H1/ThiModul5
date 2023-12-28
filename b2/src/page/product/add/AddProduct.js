@@ -8,13 +8,7 @@ export const AddProduct = () => {
     const dispatch = useDispatch();
 
     const addForm = async (values) =>{
-        const product = {
-            id: undefined,
-            title: values.title,
-            price: values.price,
-            description: values.description
-        };
-        await dispatch(add(product));
+        await dispatch(add(values));
         navigate('/product/show');
     }
 
@@ -23,7 +17,6 @@ export const AddProduct = () => {
             <h1>Create Product</h1>
             <Formik
                 initialValues={{
-                    id: Date.now(),
                     title: '',
                     price: '',
                     description: ''

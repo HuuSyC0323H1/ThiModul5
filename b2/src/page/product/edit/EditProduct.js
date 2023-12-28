@@ -30,10 +30,10 @@ export const EditProduct = () => {
         values.preventDefault();
         try {
             await dispatch(edit({ id: +id, updatedStudent: values }));
-            console.log("Student updated successfully");
+            console.log("Product updated successfully");
             navigate('/product/show');
         } catch (error) {
-            console.error("Error updating student", error);
+            console.error("Error updating product", error);
         }
     };
     return (
@@ -54,7 +54,7 @@ export const EditProduct = () => {
                     </div>
                     <div>
                         <label htmlFor="description">Description:</label>
-                        <Field as="text" id="description" name="description" />
+                        <Field as="textarea" id="description" name="description" />
                     </div>
                     <button type="submit">Save</button>
                 </Form>
